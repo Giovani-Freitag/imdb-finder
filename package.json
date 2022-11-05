@@ -1,0 +1,32 @@
+{
+  "name": "imdb-finder",
+  "version": "1.0.0",
+  "description": "Find imdb id",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles"
+  },
+  "keywords": ["IMDB", "id"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "fs-extra": "^10.1.0",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "jest": "^29.2.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giovani-Freitag/imdb-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Giovani-Freitag/imdb-finder/issues"
+  },
+  "homepage": "https://github.com/Giovani-Freitag/imdb-finder#readme"
+}

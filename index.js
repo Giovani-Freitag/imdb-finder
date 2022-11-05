@@ -1,0 +1,1 @@
+export { default as IMDBFinder } from "./src/IMDBFinder.js";
