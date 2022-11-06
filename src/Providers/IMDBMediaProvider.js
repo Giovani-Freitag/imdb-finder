@@ -16,9 +16,7 @@ export default class IMDBMediaProvider extends Provider{
 
         let findType = this.getFindType(type);
 
-        let media = json.d.filter(media => this.filter(media, findType, year))[0];
-
-        return this.encapsulate(media);
+        return json.d.filter(media => this.filter(media, findType, year))?.[0]?.id ?? null;
     }
 
     filter(media, type, year){
@@ -31,14 +29,5 @@ export default class IMDBMediaProvider extends Provider{
             return null;
 
         return type == 'series' ? 'tvSeries' : 'movie';
-    }
-
-    encapsulate(media){
-
-        return {
-            id: media.id,
-            release: media.y,
-            type: media.qid == 'tvSeries' ? 'series' : 'movie'
-        };
     }
 }

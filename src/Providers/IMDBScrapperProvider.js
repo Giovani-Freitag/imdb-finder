@@ -23,9 +23,7 @@ export default class IMDBScrapperProvider extends Provider{
 
         let res = this.parseResult(html);
 
-        return res.filter(stream => {
-            return (!type || stream.type == type) && (!year || stream.release == year);
-        })[0];
+        return res.filter(media => this.filter(media, type, year))?.[0]?.id ?? null;
     }
 
     parseResult(html, first){
@@ -76,5 +74,9 @@ export default class IMDBScrapperProvider extends Provider{
                 release:   Number.parseInt(stream.release),
                 type:      stream.type == 'TV Series' ? 'series' : 'movie'
             }));
+    }
+    
+    filter(media, type, year){
+        return (!type || media.type == type) && (!year || media.release == year);
     }
 }
